@@ -4,33 +4,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ClassRecordsService {
-  classA=[
-    {
-      name:'Mary Smith',
-      gender:'female',
-      id:0,
-      regNo:2001,
-      status:'active',
-      grade:'A'
-    },
-    
-    {
-      name:'Janice Walker',
-      gender:'female',
-      id:1,
-      regNo:2002,
-      status:'active',
-      grade:'B'
-    },
-    {
-      name:'Brody Bluewell',
-      gender:'male',
-      id:0,
-      regNo:2005,
-      status:'active',
-      grade:'B+'
-    },
-  ]
+  classB:{name:string,id:number,regNo:string,status:string,grade:string,gender:string,}[]=[]
+ 
   teacher=[{
     name:'Jeremy Robson',
     img:'https://w7.pngwing.com/pngs/34/886/png-transparent-female-woman-girl-computer-icons-svg-face-people-logo.png',

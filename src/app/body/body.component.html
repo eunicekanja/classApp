@@ -1,47 +1,53 @@
-<div class="container main-container">
-    <div class="teacher-container">
-        <div class="name-details">
-            <p class="lead">Name:Jeremy Robson</p>
-        </div>
-        <div class="other-details">
-            <img src="https://w7.pngwing.com/pngs/34/886/png-transparent-female-woman-girl-computer-icons-svg-face-people-logo.png" alt="">
-        <p class="primary">Roll No:1891</p>
-        <p class="primay">Class: Grade4 Blue</p>
-        </div> 
+<div class="title pad">
+    <p class="lead text-center" *ngIf="classB.length===0">You have no entered records</p>
+</div>
+<div class="add-record">
+    <div class="add-entry text-center pad2">
+        <button class="btn btn-primary" (click)="addRecord()">Add</button>
     </div>
+    <div class="record-input" *ngIf="!showForm">
+        <div class="input grid-2">
+            <label for="name" class="lead">Name: </label>
+            <input type="text" class="form-control" id="" #name>
+        </div><br>
+        <div class="input grid-2">
+            <label for="gender" class="lead">Gender: </label>
+            <input type="text" class="form-control" id="" #gender>
+        </div><br>
+        <div class="input grid-2">
+            <label for="name" class="lead">Reg No: </label>
+            <input type="number" class="form-control" id="" #reg>
+        </div><br>
+        <div class="input grid-2">
+            <label for="name" class="lead">Status: </label>
+            <input type="text" class="form-control" id="" #status>
+        </div><br>
+        <div class="input grid-2">
+            <label for="name" class="lead">Grade: </label>
+            <input type="text" class="form-control" id="" #grade>
+        </div>
+        <div class="add-button text-center pad">
+            <button class="btn btn-success" (click)="addItem(name.value,gender.value,reg.value,status.value,grade.value)">Add record</button>
+        </div>
+    </div>
+</div>
+<div class="container main-container">
     <div class="students-container">
-        <div class="student">
-            <div class="student-image">
-                <img src="https://www.nicepng.com/png/detail/662-6623341_male-icon-png-clipart-computer-icons-user-clip.png" alt="">
+        <div class="student-container relative" *ngFor="let record of classB; let i=index">
+            <div class="student absolute grid-two">
+                <div class="student-image">
+                    <img src="{{addGender(record.gender)}}" alt="">
+                </div>
+                <div class="student-details">
+                    <p class="lead">Name:{{record.name}}</p>
+                    <p class="lead">Reg No:{{record.regNo}}</p>
+                    <p class="lead">Status:{{record.status}}</p>
+                    <p class="lead">Grade:{{record.grade}}</p>
+                </div>
             </div>
-            <div class="student-details">
-                <p class="primary">Name:Mary Smith</p>
-                <p class="primary">Reg No:2001</p>
-                <p class="primary">Status:Active</p>
-                <p class="primary">Grade:B</p>
-            </div>
-        </div>
-        <div class="student">
-            <div class="student-image">
-                <img src="https://www.nicepng.com/png/detail/662-6623341_male-icon-png-clipart-computer-icons-user-clip.png" alt="">
-            </div>
-            <div class="student-details">
-                <p class="primary">Name:Mary Smith</p>
-                <p class="primary">Reg No:2001</p>
-                <p class="primary">Status:Active</p>
-                <p class="primary">Grade:B</p>
-            </div>
-        </div>
-        <div class="student">
-            <div class="student-image">
-                <img src="https://www.nicepng.com/png/detail/662-6623341_male-icon-png-clipart-computer-icons-user-clip.png" alt="">
-            </div>
-            <div class="student-details">
-                <p class="primary">Name:Mary Smith</p>
-                <p class="primary">Reg No:2001</p>
-                <p class="primary">Status:Active</p>
-                <p class="primary">Grade:B</p>
-            </div>
+            <div class="button">
+                <button class="btn btn-danger text-right" (click)="deleteRecord(i)">Delete</button>
+            </div> 
         </div>
     </div>
 </div>

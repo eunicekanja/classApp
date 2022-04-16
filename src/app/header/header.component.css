@@ -1,6 +1,22 @@
-body{
-    background-color: hsl(226, 43%, 10%);
+*{
+    font-family: 'rubik';
 }
-.container{
-    padding: 3rem 0;
+img{
+    width: 100%;
+}
+.teacher-container{
+    padding:1rem;
+    background-color:hsl(226, 43%, 10%);
+    color: white;
+}
+.grid-2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+}
+
+@media screen and (max-width:768px){
+    .details-container{
+        padding: 4rem 0;
+    }
 }

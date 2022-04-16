@@ -1,3 +1,51 @@
-.other-details img{
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'rubik';
+}
+:root{
+    --Blue: hsl(246, 80%, 60%);
+    --Light-red: hsl(15, 100%, 70%);
+    --Light-red: hsl(348, 100%, 68%);
+    --Lime-green: hsl(145, 58%, 55%);
+    --Violet: hsl(264, 64%, 52%);
+    --Soft-orange: hsl(43, 84%, 65%);
+    --Very-dark-blue: hsl(226, 43%, 10%);
+    --Dark-blue: hsl(235, 46%, 20%);
+    --Desaturated-blue: hsl(235, 45%, 61%);
+    --Pale-Blue: hsl(236, 100%, 87%);
+}
+
+img{
     height: 100px;
+    width: 100px;
+}
+.student{
+    padding: 2rem;
+}
+.student .lead{
+    padding-bottom: 5px;
+}
+.grid-two{
+   display: grid;
+   grid-template-columns: 30% 70%;
+}
+.pad{
+    padding:2rem;
+}
+.pad2{
+    padding: 0 2rem;
+}
+.record-input{
+    padding: 2rem 4rem;
+}
+.grid-2{
+    display: grid;
+    grid-template-columns: 10% 90%;
+    grid-gap: 1rem;
+}
+.btn{
+    padding: 0 10px;
+    font-size:1.5rem;
 }
